@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">BITask</string>
+    <string name="find_repository">Find repository</string>
+    <string name="repositories">Repositories</string>
+    <string name="commits">Commits</string>
+    <string name="find_repository_hint">Owner/Repository, e.g. square/retrofit</string>
+    <string name="error_incorrect_input">Invalid format</string>
+    <string name="error_general">Oops</string>
+    <string name="share">Share</string>
+    <string name="prompt_selection">Tap a commit card to select it</string>
+</resources>

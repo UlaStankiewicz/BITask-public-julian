@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph.xml"
+    app:startDestination="@id/repositories">
+
+    <fragment
+        android:id="@+id/repositories"
+        android:name="io.github.sp0rk.bitask.feature.repository.presentation.RepositoryListFragment"
+        android:label="@string/repositories"
+        tools:layout="@layout/fragment_repository_list">
+        <action
+            android:id="@+id/repositoriesToSearch"
+            app:destination="@id/search" />
+        <action
+            android:id="@+id/repositoriesToCommits"
+            app:destination="@id/commits" />
+    </fragment>
+
+    <dialog
+        android:id="@+id/search"
+        android:name="io.github.sp0rk.bitask.feature.search.presentation.SearchFragment"
+        android:label="@string/find_repository"
+        tools:layout="@layout/fragment_search">
+        <action
+            android:id="@+id/searchToCommits"
+            app:destination="@id/commits" />
+    </dialog>
+
+    <fragment
+        android:id="@+id/commits"
+        android:name="io.github.sp0rk.bitask.feature.commit.presentation.CommitListFragment"
+        android:label="@string/commits"
+        tools:layout="@layout/fragment_commit_list">
+        <argument
+            android:name="repository"
+            app:argType="io.github.sp0rk.data.db.entity.Repository" />
+    </fragment>
+</navigation>
